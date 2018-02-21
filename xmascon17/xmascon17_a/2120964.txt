@@ -1,0 +1,2 @@
+// detail: https://atcoder.jp/contests/xmascon17/submissions/2120964
+AABAAAABABABBAB
