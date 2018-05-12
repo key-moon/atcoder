@@ -1,0 +1,37 @@
+// detail: https://atcoder.jp/contests/arc097/submissions/2497974
+using System;
+using System.Linq;
+using System.Diagnostics;
+using System.Collections.Generic;
+using static System.Math;
+
+class P
+{
+    static void Main()
+    {
+        string s = Console.ReadLine();
+        //string s = "atcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeeredatcoderandatcodeered";
+        int k = int.Parse(Console.ReadLine());
+        List<string> list = new List<string>();
+        for (int i = 0; i < s.Length; i++)
+        {
+            List<char> cl = new List<char>();
+            for (int j = i; j < s.Length; j++)
+            {
+                cl.Add(s[j]);
+                string t = string.Join("", cl);
+                if (list.Count < k || list[k - 1].CompareTo(t) > 0)
+                {
+                    list.Add(string.Join("", cl));
+                    list = list.Distinct().OrderBy(x => x).ToList();
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
+        string[] arr = list.Distinct().OrderBy(x => x).ToArray();
+        Console.WriteLine(arr[k - 1]);
+    }
+}
