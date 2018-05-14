@@ -1,0 +1,8 @@
+// detail: https://atcoder.jp/contests/abc001/submissions/2513675
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+  int h1,h2;
+  cin >> h1 >> h2;
+  cout << (h1 - h2) << endl;
+}
