@@ -1,0 +1,2 @@
+// detail: https://atcoder.jp/contests/tenka1-2015-qualb/submissions/6389861
+6601200
