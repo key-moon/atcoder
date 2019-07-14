@@ -1,0 +1,2 @@
+// detail: https://atcoder.jp/contests/code-festival-2015-relay/submissions/6390096
+1005
