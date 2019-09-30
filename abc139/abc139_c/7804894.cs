@@ -1,0 +1,70 @@
+// detail: https://atcoder.jp/contests/abc139/submissions/7804894
+using System;
+using System.IO;
+using System.Net;
+using System.Net.Sockets;
+using System.Linq;
+using System.Collections;
+using System.Collections.Generic;
+using System.Text;
+using System.Threading.Tasks;
+using System.Text.RegularExpressions;
+using static System.Math;
+using MethodImplOptions = System.Runtime.CompilerServices.MethodImplOptions;
+using MethodImplAttribute = System.Runtime.CompilerServices.MethodImplAttribute;
+
+public static class P
+{
+    public static void Main()
+    {
+        int n = Reader.NextInt;
+        int last = 0;
+        int cur = 0;
+        int max = 0;
+        for (int i = 0; i < n; i++)
+        {
+            var h = Reader.NextInt;
+            if (last >= h) max = Max(max, ++cur);
+            else cur = 0;
+            last = h;
+        }
+        Console.WriteLine(max);
+    }
+}
+
+static class Reader
+{
+    const int BUF_SIZE = 1 << 12;
+    static Stream Stream = Console.OpenStandardInput();
+    static byte[] Buffer = new byte[BUF_SIZE];
+    static int ptr = 0;
+
+    private static void Read() { Stream.Read(Buffer, 0, BUF_SIZE); }
+
+    private static void Move() { if (++ptr >= Buffer.Length) { Read(); ptr = 0; }  }
+
+    private static byte Current { get { return Buffer[ptr]; } }
+
+    public static int NextInt
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            int res = 0; while (Current < 48) Move();
+            do { res = res * 10 + (Current ^ 48); Move(); } while (48 <= Current);
+            return res;
+        }
+    }
+
+    public static int NextSInt
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            int res = 0; int sign = 1; 
+            while (Current < 45) Move(); if (Current == 45) { Move(); sign = -1; }
+            do { res = res * 10 + (Current ^ 48); Move(); } while (48 <= Current);
+            return res * sign;
+        }
+    }
+}
