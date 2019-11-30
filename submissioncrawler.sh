@@ -72,7 +72,7 @@ for submission in $submissions; do
   
   if [ ! $result = "AC" ] || [ "${exists[$id]}" = "1" ]; then continue; fi
   
-  echo fetching submission$id...
+  echo "fetching submission #${id}..."
 
   directory="${contest_id}/${problem_id}"
   name="${id}.$(get_extension $language)"
