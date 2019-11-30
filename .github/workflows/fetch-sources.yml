@@ -1,0 +1,19 @@
+name: Fetch sources
+
+on: 
+ schedule:
+ - cron:  '40 * * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: install envs
+      run: |
+        sudo apt-get -y install dos2unix libxml2-utils
+    - name: fetch sources
+      env: 
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+         ./submissioncrawler.sh
